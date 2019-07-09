@@ -15,20 +15,11 @@ function toAmericanGrade(grade) {
     }
   }
   
-  // tests
-  function test (num, should_become) {
-    if (toAmericanGrade(num) === should_become) {
-      console.log("test passed")
-    } else {
-      console.log(`toAmericanGrade(${num}) should have been ${should_become} but was ${toAmericanGrade(num)}`)
-    }
+  function toAmericanGrades(grades) {
+    return grades.map(toAmericanGrade) // replace this with your answer
   }
-  test(8.7, "B")
-  test(10, "A")
-  test(1, "F")
-  test(5.9, "F")
-  test(6, "D")
-  test(6.9, "D")
-  test(7.3, "C")
-  test(0.3, "Not existing grade")
-  test(11, "Not existing grade")
+
+  // test
+  const grades1 = [9, 5.5, 6, 7.3]
+  const res = toAmericanGrades(grades1)[3]
+  console.log(`last is C? ${'C' == res ? "yes" : `no: ${res}`}`)
