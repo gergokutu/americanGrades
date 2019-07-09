@@ -24,6 +24,23 @@ function averageAmericanGrade(grades) {
 }
 
 // test
+
+function test (num, should_become) {
+    if (toAmericanGrade(num) === should_become) {
+      console.log("test passed")
+    } else {
+      console.log(`toAmericanGrade(${num}) should have been ${should_become} but was ${toAmericanGrade(num)}`)
+    }
+  }
+  test(9, "A")
+  test(8.3, "B")
+  test(1, "F")
+  test(5.9, "F")
+  test(7, "C")
+  test(6.9, "D")
+  test(0.9, "Not existing grade")
+  test(11, "Not existing grade")
+
 const grades1 = [9, 5.5, 6, 7.3]
 const res = toAmericanGrades(grades1)[3]
 console.log(`last is C? ${'C' == res ? "yes" : `no: ${res}`}`)
